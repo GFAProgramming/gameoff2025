@@ -1,5 +1,5 @@
 # codename-waves
-A Godot entry for [Game Off 2025](https://itch.io/jam/game-off-2025)
+A Godot entry for [Game Off 2025](https://itch.io/jam/game-off-2025) hosted by Github and Lee Reilly
 
 - Concepts: https://www.merriam-webster.com/dictionary/wave
     - Nouns:
