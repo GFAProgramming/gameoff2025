@@ -18,6 +18,7 @@ func _ready() -> void:
 	timer = get_tree().create_timer(regen_speed)
 	
 	if is_regenerating: 
+		timer.start()
 		_regenerate(get_process_delta_time())
 
 

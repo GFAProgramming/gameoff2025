@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3jjuq0ao22bl"]
 
-[ext_resource type="Script" uid="uid://e815qpddxxxw" path="res://src/scene/resource_component/resource_component.gd" id="1_onylk"]
+[ext_resource type="Script" uid="uid://dyghr4eq4u6q0" path="res://src/scene/regenerate_resource_component/regenerate_resource_component.gd" id="1_onylk"]
 
 [node name="RegenerateResourceComponent" type="Node"]
 script = ExtResource("1_onylk")
