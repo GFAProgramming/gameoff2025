@@ -34,12 +34,12 @@
 		<div class="report-container">
 			<h1>Testsuite Report</h1>
 			<div>
-				<span class="label">res://test/types/UnionTest.gd</span>
+				<span class="label">res://test/types/nullable_test.gd</span>
 			</div>
 			<div class="summary">
 				<div class="summary-item">
 					<span class="label">Tests</span>
-					<span class="value">10</span>
+					<span class="value">4</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Skipped</span>
@@ -51,21 +51,21 @@
 				</div>
 				<div class="summary-item">
 					<span class="label">Failures</span>
-					<span class="value">0</span>
+					<span class="value">2</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Orphans</span>
-					<span class="value">0</span>
+					<span class="value">8</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Duration</span>
-					<span class="value">393ms</span>
+					<span class="value">202ms</span>
 				</div>
 				<div class="success-rate">
-					<div class="check-icon status-passed">✓</div>
+					<div class="check-icon status-failed">✓</div>
 					<div class="rate-text">
 						<span class="label">Success Rate</span>
-						<span class="value">100%</span>
+						<span class="value">50%</span>
 					</div>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 		<div class="breadcrumb">
 			<a href="../index.html"><span>All</span></a>
 			<a href="../path/test.types.html"><span>test/types</span></a>
-			<a class="active" href="#"><span>UnionTest</span></a>
+			<a class="active" href="#"><span>nullable_test</span></a>
 		</div>
 	</header>
 
@@ -93,14 +93,32 @@
 					</thead>
 					<tbody>
 						
-								<tr class="testcase-group">
-									<td>test__init</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>21ms</td>
+								<tr class="failed">
+									<td>TestSuite hooks</td>
+									<td>n/a</td>
+									<td>8</td>
+									<td>202ms</td>
 									<td class="report-column">
 										<pre>
+line 1: WARNING:
+ Detected <4> orphan nodes during test suite setup stage! Check before() and after()!
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_permitted_types:0 (null, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>39ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
 
 										</pre>
 									</td>
@@ -108,13 +126,21 @@
 
 
 								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_unpermitted_types:0 (null, [Variant.Type.TYPE_INT, Variant.Type.TYPE_FLOAT])</td>
-									<td><span class="status status-passed">PASSED</span></td>
+									<td>test__init_with_permitted_types:1 (100, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-failed">FAILED</span></td>
 									<td>0</td>
-									<td>0</td>
+									<td>1</td>
 									<td>32ms</td>
 									<td class="report-column">
 										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+line 17: Expecting:
+ '100'
+ but was
+ '<null>'
 
 										</pre>
 									</td>
@@ -122,13 +148,21 @@
 
 
 								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_unpermitted_types:1 (100.0, [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL])</td>
-									<td><span class="status status-passed">PASSED</span></td>
+									<td>test__init_with_permitted_types:2 ([], Variant.Type.TYPE_ARRAY)</td>
+									<td><span class="status status-failed">FAILED</span></td>
 									<td>0</td>
-									<td>0</td>
-									<td>18ms</td>
+									<td>1</td>
+									<td>38ms</td>
 									<td class="report-column">
 										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+line 17: Expecting:
+ '<empty>'
+ but was
+ '<null>'
 
 										</pre>
 									</td>
@@ -136,97 +170,17 @@
 
 
 								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_unpermitted_types:2 ({}, [Variant.Type.TYPE_INT, Variant.Type.TYPE_ARRAY])</td>
-									<td><span class="status status-passed">PASSED</span></td>
+									<td>test__init_with_permitted_types:3 (null, Variant.Type.TYPE_ARRAY)</td>
+									<td><span class="status status-warning">WARNING</span></td>
 									<td>0</td>
-									<td>0</td>
-									<td>32ms</td>
+									<td>1</td>
+									<td>38ms</td>
 									<td class="report-column">
 										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_permitted_types:0 (null, [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL])</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>18ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_permitted_types:1 (100, [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL])</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>23ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test__validate_variant_type_with_permitted_types:2 ([], [Variant.Type.TYPE_ARRAY])</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>16ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test_is_null:0 (null, true)</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>23ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test_is_null:1 (100, false)</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>36ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>test_is_null:2 ([], false)</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>37ms</td>
-									<td class="report-column">
-										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
 
 										</pre>
 									</td>
@@ -243,7 +197,7 @@
 	</main>
 
 	<footer>
-		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-04 04:14:12</p>
+		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-05 03:13:38</p>
 		<div class="status-legend">
 			<span class="status-legend-item">
 				<span class="status-box status-skipped"></span> Skipped

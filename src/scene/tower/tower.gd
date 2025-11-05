@@ -2,20 +2,20 @@ class_name Tower
 extends Node2D
 
 ## A method that will be called every from on friendly units
-@export var process_friendly_units: Union # [Callable | null]
+@export var process_friendly_units: Nullable = Nullable.new(null, Variant.Type.TYPE_CALLABLE)
 
 ## A method that will be called every frame on hostile units
-@export var process_hostile_units: Union # [Callable | null]
+@export var process_hostile_units: Nullable = Nullable.new(null, Variant.Type.TYPE_CALLABLE)
 
 func _init(process_friendly_units_: Variant, process_hostile_units_: Variant):
-	process_friendly_units = Union.new(process_friendly_units_, [Variant.Type.TYPE_NIL, Variant.Type.TYPE_CALLABLE])
-	process_hostile_units = Union.new(process_hostile_units_, [Variant.Type.TYPE_NIL, Variant.Type.TYPE_CALLABLE])
+	process_friendly_units.nullable_value = process_friendly_units_
+	process_hostile_units.nullable_value = process_hostile_units_
 	
 func _process(delta: float) -> void:
 	_process_overlapping_units(delta)
 	
 func _process_overlapping_units(delta: float) -> void:
-	if not process_friendly_units && not process_hostile_units:
+	if not process_friendly_units and not process_hostile_units:
 		return
 	
 	var overlapping_units: Array[Unit] = _get_overlapping_units()

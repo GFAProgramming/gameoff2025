@@ -10,8 +10,8 @@ enum Hostility {
 
 @export var hostility: Hostility
 
-func _init(hostility: Hostility):
-	self.hostility = hostility
+func _init(hostility_: Hostility):
+	hostility = hostility_
 
 static func cast_to_nullable_unit(node: Node) -> Variant:
 	return node as Unit

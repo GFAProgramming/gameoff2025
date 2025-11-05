@@ -11,10 +11,10 @@ func test__init() -> void:
 	var permitted_types: Array[Variant.Type] = [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL]
 	var union: Union = auto_free(Union.new(value, permitted_types))
 	
-	assert_that(typeof(union.value)).is_equal(Variant.Type.TYPE_INT)
+	assert_that(typeof(union.get_value())).is_equal(Variant.Type.TYPE_INT)
 	
-	assert_int(union.value).is_equal(value)
-	assert_array(union.permitted_types).is_equal(permitted_types)
+	assert_int(union.get_value()).is_equal(value)
+	assert_array(union._permitted_types).is_equal(permitted_types)
 
 func test__validate_variant_type_with_unpermitted_types(value: Variant, permitted_types: Array[Variant.Type], test_parameters := [
 	[null, [Variant.Type.TYPE_INT, Variant.Type.TYPE_FLOAT]],
@@ -26,7 +26,7 @@ func test__validate_variant_type_with_unpermitted_types(value: Variant, permitte
 		var error: Error = union._validate_variant_type(value)
 		
 		assert_that(error).equals(Error.ERR_INVALID_PARAMETER)
-	).is_push_error("TYPE_INT is not a one of the legal variant types.")
+	).is_push_error("%s is not a one of the legal variant types." % typeof(value))
 	
 func test__validate_variant_type_with_permitted_types(value: Variant, permitted_types: Array[Variant.Type], test_parameters := [
 	[null, [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL]],
