@@ -9,7 +9,7 @@ signal on_value_changed(old_value: float, new_value: float)
 @export var max_value: float = 100
 
 # Default value is max_value
-@export var value: float = max_value: 
+@export var value: float = min_value: 
 	set = _set_value, get = _get_value
 
 

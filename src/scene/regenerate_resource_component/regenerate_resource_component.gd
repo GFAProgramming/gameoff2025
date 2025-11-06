@@ -12,15 +12,15 @@ signal on_regenerating(value: bool)
 ## Determines if the value is regenerating.
 @export var is_regenerating: bool = true : set = _set_is_regenerating
 
-var timer : SceneTreeTimer
+@onready var timer : Timer = $regen_timer
 
 func _ready() -> void:
-	timer = get_tree().create_timer(regen_speed)
+	timer.wait_time = regen_speed
+	timer.timeout.connect(_regenerate)
 	
 	if is_regenerating: 
 		timer.start()
-		_regenerate(get_process_delta_time())
-
+		
 
 func _set_is_regenerating(v: bool):
 	is_regenerating = v
@@ -30,11 +30,9 @@ func _set_is_regenerating(v: bool):
 		timer.start()
 	else:
 		timer.stop()
+		
 	
+## This function does not require delta time (I believe) as delta time is already considered by the Timer
+func _regenerate():
+	value += regen_amount
 	
-func _regenerate(delta: float):
-	value += (regen_amount * delta)
-	
-	await timer.timeout
-	
-

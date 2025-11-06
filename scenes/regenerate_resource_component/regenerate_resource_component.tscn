@@ -4,4 +4,8 @@
 
 [node name="RegenerateResourceComponent" type="Node"]
 script = ExtResource("1_onylk")
+regen_amount = 1.0
 metadata/_custom_type_script = "uid://e815qpddxxxw"
+
+[node name="regen_timer" type="Timer" parent="."]
+unique_name_in_owner = true

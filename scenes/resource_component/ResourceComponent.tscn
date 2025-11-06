@@ -4,3 +4,4 @@
 
 [node name="ResourceComponent" type="Node"]
 script = ExtResource("1_ed2yr")
+value = 0.0
