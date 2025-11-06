@@ -8,7 +8,7 @@ func get_value() -> Variant:
 	return _value
 	
 func set_value(value_: Variant) -> void:
-	_validate_variant_type(value_)
+	_validate_type(value_)
 	_value = value_
 	
 func permits_assignment_of_type(type: Variant.Type) -> bool:
@@ -19,11 +19,11 @@ func is_null() -> bool:
 	
 func _init(value_: Variant, permitted_types_: Array[Variant.Type]):
 	_permitted_types = permitted_types_
-	_value = value_
+	set_value(value_)
 
-func _validate_variant_type(value_: Variant) -> Error:
+func _validate_type(value_: Variant) -> Error:
 	if not typeof(value_) in _permitted_types:
-		push_error("%s is not a one of the legal variant types." % typeof(value_))
+		push_error("%s is not a one of the legal Union types.")
 		return Error.ERR_INVALID_PARAMETER
 		
 	return Error.OK
