@@ -39,7 +39,7 @@
 			<div class="summary">
 				<div class="summary-item">
 					<span class="label">Tests</span>
-					<span class="value">4</span>
+					<span class="value">10</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Skipped</span>
@@ -55,14 +55,14 @@
 				</div>
 				<div class="summary-item">
 					<span class="label">Orphans</span>
-					<span class="value">0</span>
+					<span class="value">32</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Duration</span>
-					<span class="value">208ms</span>
+					<span class="value">601ms</span>
 				</div>
 				<div class="success-rate">
-					<div class="check-icon status-passed">✓</div>
+					<div class="check-icon status-warning">✓</div>
 					<div class="rate-text">
 						<span class="label">Success Rate</span>
 						<span class="value">100%</span>
@@ -93,12 +93,98 @@
 					</thead>
 					<tbody>
 						
+								<tr class="warning">
+									<td>TestSuite hooks</td>
+									<td>n/a</td>
+									<td>32</td>
+									<td>601ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <16> orphan nodes during test suite setup stage! Check before() and after()!
+										</pre>
+									</td>
+								</tr>
+
+
 								<tr class="testcase-group">
-									<td>test_is_unit:0 (auto_free(Unit.new()), true)</td>
+									<td>test_cast_to_nullable_unit:0 (auto_free(Unit.new(Unit.Hostility.Friendly)), true)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>4</td>
+									<td>40ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <4> orphan nodes during test setup! Check before_test() and after_test()!
+line 8: WARNING:
+ Detected <4> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_cast_to_nullable_unit:1 (auto_free(Node.new()), false)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>4</td>
+									<td>40ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <4> orphan nodes during test setup! Check before_test() and after_test()!
+line 8: WARNING:
+ Detected <4> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_cast_to_nullable_unit:2 (auto_free(Tower.new(null, null)), false)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>4</td>
+									<td>61ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <4> orphan nodes during test setup! Check before_test() and after_test()!
+line 8: WARNING:
+ Detected <4> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_cast_to_nullable_unit:3 (null, false)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>4</td>
+									<td>47ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <4> orphan nodes during test setup! Check before_test() and after_test()!
+line 8: WARNING:
+ Detected <4> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_is_hostile_unit:0 (Unit.Hostility.Hostile, true)</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>30ms</td>
+									<td>41ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -108,11 +194,11 @@
 
 
 								<tr class="testcase-group">
-									<td>test_is_unit:1 (auto_free(Node.new()), false)</td>
+									<td>test_is_hostile_unit:1 (Unit.Hostility.Friendly, false)</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>32ms</td>
+									<td>48ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -122,7 +208,7 @@
 
 
 								<tr class="testcase-group">
-									<td>test_is_unit:2 (auto_free(Tower.new()), false)</td>
+									<td>test_is_hostile_unit:2 (Unit.Hostility.Neutral, false)</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
@@ -136,11 +222,39 @@
 
 
 								<tr class="testcase-group">
-									<td>test_is_unit:3 (null, false)</td>
+									<td>test_is_friendly_unit:0 (Unit.Hostility.Hostile, false)</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>37ms</td>
+									<td>46ms</td>
+									<td class="report-column">
+										<pre>
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_is_friendly_unit:1 (Unit.Hostility.Friendly, true)</td>
+									<td><span class="status status-passed">PASSED</span></td>
+									<td>0</td>
+									<td>0</td>
+									<td>53ms</td>
+									<td class="report-column">
+										<pre>
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_is_friendly_unit:2 (Unit.Hostility.Neutral, false)</td>
+									<td><span class="status status-passed">PASSED</span></td>
+									<td>0</td>
+									<td>0</td>
+									<td>47ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -159,7 +273,7 @@
 	</main>
 
 	<footer>
-		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-03 22:24:44</p>
+		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-08 21:38:02</p>
 		<div class="status-legend">
 			<span class="status-legend-item">
 				<span class="status-box status-skipped"></span> Skipped

@@ -9,10 +9,15 @@ var neighboring_tower: Tower
 var friendly_unit: Unit
 var hostile_unit: Unit
 
+func noop_method():
+	pass
+
 func before() -> void:
 	tower = auto_free(Tower.new(null, null))
 	neighboring_tower = auto_free(Tower.new(null, null))
 	friendly_unit = auto_free(Unit.new(Unit.Hostility.Friendly))
 	hostile_unit = auto_free(Unit.new(Unit.Hostility.Hostile))
 
-#func test__get_overlapping_units_with
+func test__get_overlapping_units() -> void:
+	
+	
