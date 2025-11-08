@@ -15,7 +15,7 @@ func test__init_with_permitted_types(value: Variant, type: Variant.Type, test_pa
 	var nullable: Nullable = auto_free(Nullable.new(value, type))
 	
 	assert_that(nullable.get_value()).is_equal(value)
-	assert_that(nullable._permitted_type).is_equal(type)
+	assert_that(nullable.__permitted_type).is_equal(type)
 
 func test__init_with_unpermitted_types(value: Variant, type: Variant.Type, test_parameters := [
 	[100, Variant.Type.TYPE_FLOAT],
@@ -23,22 +23,22 @@ func test__init_with_unpermitted_types(value: Variant, type: Variant.Type, test_
 ]) -> void:
 	await assert_error(func():
 		var nullable: Nullable = auto_free(Nullable.new(value, type))
-		assert_object(nullable.get_value().is_null()
-	).is_push_error("%s is not a one of the legal variant types." % typeof(value)))
+		assert_that(nullable.get_value()).is_null()
+	).is_push_error("%s is not one of the legal Union types." % typeof(value))
 
 func test_get_value(value: Variant, type: Variant.Type, test_parameters := [
 	[null, Variant.Type.TYPE_INT],
 	[100, Variant.Type.TYPE_INT]
 ]) -> void:
 	var nullable: Nullable = auto_free(Nullable.new(value, type))
-	assert_object(nullable.get_value()).is_equal(value)
+	assert_int(nullable.get_value()).is_equal(value)
 	
 func test_set_value_with_permitted_type() -> void:
 	var value: int = 200
 	var nullable: Nullable = auto_free(Nullable.new(100, Variant.Type.TYPE_INT))
 	
 	nullable.set_value(value)
-	assert_object(nullable._value_or_null._value).is_equal(value)
+	assert_int(nullable.get_value()).is_equal(value)
 
 func test_set_value_with_unpermitted_type() -> void:
 	var permitted_value = 100
@@ -48,4 +48,4 @@ func test_set_value_with_unpermitted_type() -> void:
 	await assert_error(func():
 		nullable.set_value(unpermitted_value)
 		assert_int(nullable.get_value()).is_equal(permitted_value)
-	).is_push_error("Illegal assignment of type Array to Nullable[int]")
+	).is_push_error("%s is not one of the legal Union types." % typeof(unpermitted_value))

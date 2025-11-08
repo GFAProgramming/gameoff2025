@@ -1,29 +1,18 @@
 class_name Nullable
 extends Node
 
-var _value_or_null: Union
-var _permitted_type: Variant.Type
+var __value: Union
+var __permitted_type: Variant.Type
 
 func _init(value_: Variant, permitted_type_: Variant.Type) -> void:
-	_value_or_null = Union.new(value_, [_permitted_type, Variant.Type.TYPE_NIL])
-	_permitted_type = permitted_type_
+	__permitted_type = permitted_type_
+	__value = Union.new(value_, [permitted_type_, Variant.Type.TYPE_NIL])
 
 func get_value() -> Variant:
-	match typeof(_value_or_null):
-		Variant.Type.TYPE_NIL:
-			return null
-		_permitted_type:
-			return _value_or_null.get_value()
-		_:
-			push_error("Illegal state; value of Node[%s] has value %s of unpermitted type %s" % [_permitted_type, _value_or_null, typeof(_value_or_null)])
-			return null
+	return __value.get_value()
 			
 func set_value(value: Variant) -> void:
-		if not _value_or_null.permits_assignment_of_type(typeof(value)):
-			push_error("Illegal assignment of type %s to Nullable[%s]" % [typeof(value), _permitted_type])
-			return
-			
-		_value_or_null = value
+	__value.set_value(value)
 	
 func is_null() -> bool:
-	return typeof(_value_or_null) == Variant.Type.TYPE_NIL
+	return typeof(__value.get_value()) == Variant.Type.TYPE_NIL

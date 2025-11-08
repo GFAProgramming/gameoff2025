@@ -54,7 +54,7 @@ func test__validate_type_with_unpermitted_types(value: Variant, permitted_types:
 		var error: Error = union._validate_variant_type(value)
 		
 		assert_that(error).equals(Error.ERR_INVALID_PARAMETER)
-	).is_push_error("%s is not a one of the legal variant types." % typeof(value))
+	).is_push_error("%s is not one of the legal variant types." % typeof(value))
 	
 func test__validate_type_with_permitted_types(value: Variant, permitted_types: Array[Variant.Type], test_parameters := [
 	[null, [Variant.Type.TYPE_INT, Variant.Type.TYPE_NIL]],

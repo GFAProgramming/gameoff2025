@@ -39,7 +39,7 @@
 			<div class="summary">
 				<div class="summary-item">
 					<span class="label">Tests</span>
-					<span class="value">1</span>
+					<span class="value">10</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Skipped</span>
@@ -51,21 +51,21 @@
 				</div>
 				<div class="summary-item">
 					<span class="label">Failures</span>
-					<span class="value">2</span>
+					<span class="value">0</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Orphans</span>
-					<span class="value">2</span>
+					<span class="value">20</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Duration</span>
-					<span class="value">63ms</span>
+					<span class="value">664ms</span>
 				</div>
 				<div class="success-rate">
-					<div class="check-icon status-failed">✓</div>
+					<div class="check-icon status-warning">✓</div>
 					<div class="rate-text">
 						<span class="label">Success Rate</span>
-						<span class="value">0%</span>
+						<span class="value">100%</span>
 					</div>
 				</div>
 			</div>
@@ -93,23 +93,131 @@
 					</thead>
 					<tbody>
 						
-								<tr class="failed">
+								<tr class="warning">
 									<td>TestSuite hooks</td>
 									<td>n/a</td>
-									<td>2</td>
-									<td>63ms</td>
+									<td>20</td>
+									<td>664ms</td>
 									<td class="report-column">
 										<pre>
 line 1: WARNING:
- Detected <1> orphan nodes during test suite setup stage! Check before() and after()!
+ Detected <10> orphan nodes during test suite setup stage! Check before() and after()!
 										</pre>
 									</td>
 								</tr>
 
 
 								<tr class="testcase-group">
-									<td>test_set_value_with_permitted_type</td>
-									<td><span class="status status-failed">FAILED</span></td>
+									<td>test__init_with_permitted_types:0 (null, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>55ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_permitted_types:1 (100, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>51ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_permitted_types:2 ([], Variant.Type.TYPE_ARRAY)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>43ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_permitted_types:3 (null, Variant.Type.TYPE_ARRAY)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>44ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 9: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_unpermitted_types:0 (100, Variant.Type.TYPE_FLOAT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>85ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 20: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test__init_with_unpermitted_types:1 ([], Variant.Type.TYPE_DICTIONARY)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>58ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 20: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_get_value:0 (null, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
 									<td>0</td>
 									<td>1</td>
 									<td>48ms</td>
@@ -117,13 +225,62 @@ line 1: WARNING:
 										<pre>
 line 1: WARNING:
  Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 29: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_get_value:1 (100, Variant.Type.TYPE_INT)</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>51ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 29: WARNING:
+ Detected <1> orphan nodes during test execution!
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_set_value_with_permitted_type</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>20ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
 line 36: WARNING:
  Detected <1> orphan nodes during test execution!
-line 41: GdUnitObjectAssert inital error, unexpected type <int>
-line 41: Expecting:
- '200'
- but was
- '100'
+
+										</pre>
+									</td>
+								</tr>
+
+
+								<tr class="testcase-group">
+									<td>test_set_value_with_unpermitted_type</td>
+									<td><span class="status status-warning">WARNING</span></td>
+									<td>0</td>
+									<td>1</td>
+									<td>48ms</td>
+									<td class="report-column">
+										<pre>
+line 1: WARNING:
+ Detected <1> orphan nodes during test setup! Check before_test() and after_test()!
+line 43: WARNING:
+ Detected <1> orphan nodes during test execution!
 
 										</pre>
 									</td>
@@ -140,7 +297,7 @@ line 41: Expecting:
 	</main>
 
 	<footer>
-		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-06 02:08:18</p>
+		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-11-08 21:29:57</p>
 		<div class="status-legend">
 			<span class="status-legend-item">
 				<span class="status-box status-skipped"></span> Skipped
