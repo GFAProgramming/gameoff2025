@@ -23,4 +23,3 @@ func _set_value(new_value: float) -> void:
 	
 func _get_value() -> float:
 	return value
-

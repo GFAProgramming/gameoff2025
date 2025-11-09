@@ -11,6 +11,9 @@ var friendly_unit: Unit
 var neutral_unit: Unit
 var hostile_unit: Unit
 
+func process_units_noop(units: Array[Unit], delta: float):
+	return null
+
 func before() -> void:
 	tower_spy = spy(auto_free(Tower.new(null, null)))
 	neighboring_tower = auto_free(Tower.new(null, null))
@@ -24,7 +27,7 @@ func test__get_overlapping_units(overlapping_areas: Array[Area2D], expected_over
 	[[null], []],
 	[[friendly_unit], [friendly_unit]],
 	[[friendly_unit, hostile_unit], [friendly_unit, hostile_unit]],
-	[[neighboring_tower, friendly_unit, null, neutral_unit, neighboring_tower, hostile_unit], [friendly_unit, hostile_unit]]
+	[[neighboring_tower, friendly_unit, null, neutral_unit, neighboring_tower, hostile_unit], [friendly_unit, neutral_unit, hostile_unit]]
 ]) -> void:
 	var tower: Tower = auto_free(Tower.new(null, null))
 	var mock_area2D: Area2D = mock(Area2D)
