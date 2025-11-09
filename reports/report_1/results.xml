@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites id="2025-11-08" name="report_1" tests="1" failures="2" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="tower_test" package="test/scene/tower_test" timestamp="2025-11-08T21:43:55" hostname="localhost" tests="1" failures="2" errors="0" skipped="0" flaky="0" time="0.035">
-		<testcase name="test__init" classname="tower_test" time="0.014">
-			<failure message="FAILED: res://test/scene/tower_test/tower_test.gd:22" type="FAILURE">
-<![CDATA[
-Expecting:
- 'Node(TowerTest)::noop_method'
- but was
- <Node>
-]]>
-			</failure>
-			<failure message="FAILED: res://test/scene/tower_test/tower_test.gd:23" type="FAILURE">
-<![CDATA[
-Expecting: '<null>' but was <Node>
-]]>
-			</failure>
+<testsuites id="2025-11-09" name="report_1" tests="6" failures="0" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="tower_test" package="test/scene/tower_test" timestamp="2025-11-09T19:02:02" hostname="localhost" tests="6" failures="0" errors="0" skipped="0" flaky="0" time="0.549">
+		<testcase name="test__get_overlapping_units:0 ([], [])" classname="tower_test" time="0.039">
+		</testcase>
+		<testcase name="test__get_overlapping_units:1 ([null], [])" classname="tower_test" time="0.036">
+		</testcase>
+		<testcase name="test__get_overlapping_units:2 ([friendly_unit], [friendly_unit])" classname="tower_test" time="0.046">
+		</testcase>
+		<testcase name="test__get_overlapping_units:3 ([friendly_unit, hostile_unit], [friendly_unit, hostile_unit])" classname="tower_test" time="0.035">
+		</testcase>
+		<testcase name="test__get_overlapping_units:4 ([neighboring_tower, friendly_unit, null, neutral_unit, neighboring_tower, hostile_unit], [friendly_unit, hostile_unit])" classname="tower_test" time="0.048">
+		</testcase>
+		<testcase name="test__process_overlapping_units_should_do_nothing_if_both_processor_callables_are_null" classname="tower_test" time="0.014">
 		</testcase>
 	</testsuite>
 </testsuites>

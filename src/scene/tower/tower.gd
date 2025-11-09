@@ -31,7 +31,12 @@ func _process_overlapping_units(delta: float) -> void:
 		process_hostile_units.value.call(hostile_units, delta)
 
 func _get_overlapping_units() -> Array[Unit]:
-	return area2D.get_overlapping_areas()												\
-				.filter(func(area2D): return Unit.cast_to_nullable_unit(area2D.owner))	\
+	return area2D.get_overlapping_areas()											\
+				.filter(func(overlapping_area2D): 									
+					if overlapping_area2D == null:									
+						return null													
+																					
+					return Unit.cast_to_nullable_unit(overlapping_area2D.owner)		\
+				)																	\
 				.filter(func(unit_or_null): return unit_or_null != null)
 				
