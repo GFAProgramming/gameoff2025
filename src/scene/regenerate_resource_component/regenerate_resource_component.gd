@@ -1,4 +1,4 @@
-class_name RegenerateResourceComponent
+class_name RegenResourceComponent
 extends ResourceComponent
 
 signal on_regenerating(value: bool)
