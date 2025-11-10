@@ -7,7 +7,7 @@ extends Node2D
 ## A method that will be called every frame on hostile units
 @export var process_hostile_units: Nullable = Nullable.new(null, Variant.Type.TYPE_CALLABLE)
 
-@onready var area2D: Area2D = $Area2D
+@onready var area2D: Area2D = %Area2D
 
 func _init(process_friendly_units_: Variant, process_hostile_units_: Variant):
 	process_friendly_units.set_value(process_friendly_units_)

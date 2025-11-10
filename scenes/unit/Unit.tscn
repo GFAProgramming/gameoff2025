@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgvn76g1ccx1j"]
+[gd_scene load_steps=4 format=3 uid="uid://dgvn76g1ccx1j"]
 
 [ext_resource type="Script" uid="uid://fgoma5d50tlk" path="res://src/scene/unit/unit.gd" id="1_av42s"]
 [ext_resource type="PackedScene" uid="uid://dug3ytdmcvxfi" path="res://scenes/combat_system/HealthComponent.tscn" id="2_t3qem"]
+[ext_resource type="PackedScene" uid="uid://bh0mmmvl3elea" path="res://scenes/movement_system/MovementComponent.tscn" id="3_ssxoi"]
 
 [node name="Unit" type="Node2D"]
 script = ExtResource("1_av42s")
+hostility = null
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_t3qem")]
+unique_name_in_owner = true
+
+[node name="MovementComponent" parent="." instance=ExtResource("3_ssxoi")]
 unique_name_in_owner = true

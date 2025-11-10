@@ -1,4 +1,4 @@
-# A `Unit` is a base class for non-player characters with movement (free or pre-determined)
+## A `Unit` is a base class for non-player characters with movement (free or pre-determined)
 class_name Unit
 extends Node2D
 
@@ -11,6 +11,7 @@ enum Hostility {
 @export var hostility: Hostility
 
 @onready var health: HealthComponent = %HealthComponent
+@onready var movement: MovementComponent = %MovementComponent
 
 func _init(hostility_: Hostility):
 	hostility = hostility_
