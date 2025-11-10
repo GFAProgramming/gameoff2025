@@ -10,6 +10,8 @@ enum Hostility {
 
 @export var hostility: Hostility
 
+@onready var health: HealthComponent = %HealthComponent
+
 func _init(hostility_: Hostility):
 	hostility = hostility_
 
