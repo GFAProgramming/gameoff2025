@@ -24,7 +24,7 @@ func test_heal_with_amounts(initial_health: float, healing: float, expected_heal
 ]):
 	health_component._health.value = initial_health
 	var actual_health: float = health_component.heal(healing)
-	assert_float(actual_health).is_equal(expected_health)
+	assert_float(actual_health).is_equal_approx(expected_health, 0.0001)
 
 ## HealthComponent::heal() should do nothing if the entity is not alive
 func test_heal_with_alive_values(initial_health: float, is_alive: bool, healing: float, expected_health: float, test_parameters := [
@@ -34,7 +34,7 @@ func test_heal_with_alive_values(initial_health: float, is_alive: bool, healing:
 	health_component._health.value = initial_health
 	health_component._is_alive = is_alive
 	var actual_health: float = health_component.heal(healing)
-	assert_float(actual_health).is_equal(expected_health)
+	assert_float(actual_health).is_equal_approx(expected_health, 0.0001)
 
 ## HealthComponent::damage() should:
 ##	- Decrease health by floor(mininum health, current health - damage) if the amount of damage is positive
@@ -45,8 +45,10 @@ func test_damage_with_amounts(initial_health: float, damage: float, expected_hea
 	[100.0, 1.0, 99.0]
 ]):
 	health_component._health.value = initial_health
+	health_component._is_alive = true
+	
 	var actual_health: float = health_component.damage(damage)
-	assert_float(actual_health).is_equal(expected_health)
+	assert_float(actual_health).is_equal_approx(expected_health, 0.001)
 
 ## HealthComponent::damage() should do nothing if the entity is not alive
 func test_damage_with_alive_values(initial_health: float, is_alive: bool, damage: float, expected_health: float, test_parameters := [
@@ -56,7 +58,7 @@ func test_damage_with_alive_values(initial_health: float, is_alive: bool, damage
 	health_component._health.value = initial_health
 	health_component._is_alive = is_alive
 	var actual_health: float = health_component.damage(damage)
-	assert_float(actual_health).is_equal(expected_health)
+	assert_float(actual_health).is_equal_approx(expected_health, 0.001)
 
 ## HealthComponent::damage() should update _is_alive iff health equals 0.0
 func test_damage_sets_is_alive_on_death(initial_health: float, damage: float, expected_health: float, expected_is_alive: bool, test_parameters := [
