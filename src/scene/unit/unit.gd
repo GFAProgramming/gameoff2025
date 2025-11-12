@@ -8,10 +8,12 @@ enum Hostility {
 	Neutral
 }
 
+@export_category("Unit Parameters")
 @export var hostility: Hostility
 
 @onready var health: HealthComponent = %HealthComponent
 @onready var movement: MovementComponent = %MovementComponent
+@onready var sprite2D: Sprite2D = %Sprite2D
 
 func _init(hostility_: Hostility):
 	hostility = hostility_
