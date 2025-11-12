@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy7asbalf7pnl"]
+
+[ext_resource type="Script" uid="uid://b1q7ge26tl4kv" path="res://src/scene/multitarget_enemy/multitarget_enemy.gd" id="1_t5qll"]
+[ext_resource type="PackedScene" uid="uid://dug3ytdmcvxfi" path="res://scenes/combat_system/HealthComponent.tscn" id="2_0a8ve"]
+
+[node name="MultitargetEnemy" type="Node"]
+script = ExtResource("1_t5qll")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_0a8ve")]
+unique_name_in_owner = true

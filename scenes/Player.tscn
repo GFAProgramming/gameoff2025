@@ -1,12 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0kvt73eguhhq"]
+[gd_scene load_steps=6 format=3 uid="uid://c0kvt73eguhhq"]
 
 [ext_resource type="Script" uid="uid://cn3tb0ypco6gg" path="res://src/scene/player/player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://br4rh7eji6r2y" path="res://assets/art/placeholder_player.png" id="2_v6fml"]
+[ext_resource type="Texture2D" uid="uid://by6gbhvqpuo74" path="res://assets/art/placeholder_player_alt.png" id="3_3li8b"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v6fml")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3li8b")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_p0vlq")
+movement_speed = 200.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 rotation = 1.5707964
-texture = ExtResource("2_v6fml")
+sprite_frames = SubResource("SpriteFrames_v6fml")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v6fml")
+
+[node name="Camera2D" type="Camera2D" parent="."]
