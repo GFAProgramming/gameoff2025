@@ -1,4 +1,4 @@
 class_name MovementComponent
 extends Node
 
-@onready var speed: ResourceComponent = %Speed
+@onready var speed: ValueResource = ValueResource.new()

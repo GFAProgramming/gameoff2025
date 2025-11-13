@@ -1,5 +1,5 @@
-class_name RegenResourceComponent
-extends ResourceComponent
+class_name RegenValueResource
+extends ValueResource
 
 signal on_regenerating(value: bool)
 

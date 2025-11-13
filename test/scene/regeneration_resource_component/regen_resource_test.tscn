@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2e7jhb566mmy"]
-
-[ext_resource type="PackedScene" uid="uid://b3jjuq0ao22bl" path="res://scenes/resource_component/RegenResourceComponent.tscn" id="1_ce1fp"]
-
-[node name="RegenResourceTest" type="Node2D"]
-
-[node name="RegenerateResourceComponent" parent="." instance=ExtResource("1_ce1fp")]

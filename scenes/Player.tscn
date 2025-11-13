@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0kvt73eguhhq"]
+[gd_scene load_steps=7 format=3 uid="uid://c0kvt73eguhhq"]
 
 [ext_resource type="Script" uid="uid://cn3tb0ypco6gg" path="res://src/scene/player/player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://br4rh7eji6r2y" path="res://assets/art/placeholder_player.png" id="2_v6fml"]
 [ext_resource type="Texture2D" uid="uid://by6gbhvqpuo74" path="res://assets/art/placeholder_player_alt.png" id="3_3li8b"]
+[ext_resource type="Script" uid="uid://emdk1e8o5ku1" path="res://src/scene/combat_system/health_component.gd" id="4_mdl7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
 animations = [{
@@ -47,3 +48,7 @@ autoplay = "Idle"
 shape = SubResource("CircleShape2D_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_mdl7e")
+metadata/_custom_type_script = "uid://emdk1e8o5ku1"

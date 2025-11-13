@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dug3ytdmcvxfi"]
+[gd_scene load_steps=2 format=3 uid="uid://dug3ytdmcvxfi"]
 
 [ext_resource type="Script" uid="uid://emdk1e8o5ku1" path="res://src/scene/combat_system/health_component.gd" id="1_gg8pe"]
-[ext_resource type="PackedScene" uid="uid://cehmp7xtbq8c1" path="res://scenes/resource_component/ResourceComponent.tscn" id="2_lfv04"]
 
 [node name="HealthComponent" type="Node"]
 script = ExtResource("1_gg8pe")
-
-[node name="Health" parent="." instance=ExtResource("2_lfv04")]
-unique_name_in_owner = true
-value = 100.0

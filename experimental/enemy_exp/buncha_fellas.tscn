@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://drdv00nk5b603"]
+
+[ext_resource type="PackedScene" uid="uid://cp6sm1h7bo0lf" path="res://experimental/enemy_exp/enemy_exp.tscn" id="1_12fvl"]
+
+[node name="BunchaFellas" type="Node2D"]
+
+[node name="EnemyExp" parent="." instance=ExtResource("1_12fvl")]
+position = Vector2(82, 10)
+
+[node name="EnemyExp2" parent="." instance=ExtResource("1_12fvl")]
+position = Vector2(94, 44)
+
+[node name="EnemyExp3" parent="." instance=ExtResource("1_12fvl")]
+position = Vector2(58, 45)
+
+[node name="EnemyExp4" parent="." instance=ExtResource("1_12fvl")]
+position = Vector2(139, 46)
+
+[editable path="EnemyExp"]
+[editable path="EnemyExp2"]
+[editable path="EnemyExp3"]
+[editable path="EnemyExp4"]
