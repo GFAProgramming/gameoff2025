@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd45nwwc653bs"]
+
+[ext_resource type="Script" uid="uid://45jh3wf78ssj" path="res://scenes/combat_system/damage_modifiers.gd" id="1_ha5iv"]
+
+[node name="DamageModifier" type="Node"]
+script = ExtResource("1_ha5iv")

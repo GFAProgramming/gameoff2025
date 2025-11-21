@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="ValueResource" load_steps=2 format=3 uid="uid://devvb6gswvtwm"]
-
-[ext_resource type="Script" uid="uid://cqlaneisqyerm" path="res://resources/value_resource/value_resource.gd" id="1_cv1nk"]
-
-[resource]
-script = ExtResource("1_cv1nk")
-value = null
